@@ -1,0 +1,685 @@
+units:
+  U: 19.05
+  m: 39
+points:
+  zones:
+    alpha:
+      columns:
+        pinkyin:
+          spread: U
+          rows:
+            bottom:
+              bind: [U,0,0,0]
+            home:
+            top:
+              bind: [,U,U,0]
+          key:
+            column_net: P14
+            mirror:
+              column_net: P8
+        ring:
+          stagger: 12
+          rotate: -6
+          spread: U+.9
+          rows:
+            bottom:
+              bind: [,0,0,.9U]
+            home:
+            top:
+              bind: [,U,0,0]
+          key:
+            column_net: P15
+            mirror:
+              column_net: P7
+        middle:
+          stagger: 4.7
+          rotate: -6
+          spread: U+.9
+          rows:
+            bottom:
+              bind: [,U,0,U]
+            home:
+              bind: [0,10,6,15]
+            top:
+          key:
+            column_net: P18
+            mirror:
+              column_net: P5
+        index:
+          stagger: -6
+          spread: U
+          rows:
+            bottom:
+              bind: [,U,0,0]
+            home:
+              bind: [6,6,6,0]
+            top:
+              bind: [,0,0,U]
+          key:
+            column_net: P20
+            mirror:
+              column_net: P4
+        inner:
+          stagger: -2.5
+          spread: U
+          rows:
+            bottom:
+              bind: [U,0,0,0]
+            home:
+            top:
+              bind: [,0,0,U]
+          key:
+            column_net: P21
+            mirror:
+              column_net: P3
+      rows: 
+        bottom:
+          padding: U
+          row_net: P6
+        home:
+          padding: U
+          row_net: P19          
+        top:
+          row_net: P2     
+      key:
+        footprints:
+          mx:
+            type: mx
+            nets:
+              from: =colrow
+              to: =column_net
+            params:
+              hotswap: true
+          diode:
+            type: diode
+            nets:
+              from: =colrow
+              to: =row_net
+            anchor:
+              shift: [0,-5]
+              rotate: 180
+            params:
+                through_hole: false
+        mirror.footprints.diode.anchor:
+          shift: [0,-5]
+          rotate: 180
+    thumb:
+      anchor:
+        ref: alpha_inner_bottom
+        shift: [-11.6, -U+2]
+      columns:
+        near:
+          rotate: -15
+          origin: [-.5U,-.5U]
+          rows:
+            only:
+              bind: [U,U,0,0]
+          key:
+            column_net: P20
+            mirror:
+              column_net: P4
+        far:
+          rotate: -15
+          origin: [-.5U,-.5U]
+          rows:
+            only:
+              bind: [5,0,0,U]
+          key:
+            column_net: P21
+            mirror:
+              column_net: P3
+      rows:
+        only:
+          row_net: P16  
+      key:
+        footprints:
+          mx:
+            type: mx
+            nets:
+              from: =colrow
+              to: =column_net
+            params:
+              hotswap: true
+          diode:
+            type: diode
+            nets:
+              from: =colrow
+              to: =row_net
+            anchor:
+              shift: [0,-5]
+              rotate: 180
+            params:
+                through_hole: false
+        mirror.footprints.diode.anchor:
+          shift: [0,-5]
+          rotate: 180
+    pinky:
+      anchor:
+        ref: alpha_pinkyin_home
+        shift: [-U,-2.5]
+      columns:
+        pinkyout:
+          key:
+            column_net: P10
+            mirror:
+              column_net: P9
+          rows:
+            pinkyhome:
+              bind: [0,U,0,0]
+      rows:
+        pinkyhome:
+          row_net: P19  
+      key:
+        footprints:
+          mx:
+            type: mx
+            nets:
+              from: =colrow
+              to: =column_net
+            params:
+              hotswap: true
+          diode:
+            type: diode
+            nets:
+              from: =colrow
+              to: =row_net
+            anchor:
+              shift: [0,-5]
+              rotate: 180
+            params:
+                through_hole: false
+        mirror.footprints.diode.anchor:
+          shift: [0,-5]
+          rotate: 180
+  rotate: -28
+  mirror: 
+    ref: alpha_inner_top
+    distance: m
+outlines:
+  glue:
+    glue:
+      top.left.ref: alpha_inner_top
+      top.right.ref: mirror_alpha_inner_top
+      bottom.left.ref: alpha_index_home
+      bottom.right.ref: mirror_alpha_index_home
+  exports:
+    mounting_holes:
+      - type: circle
+        anchor: 
+          ref: [alpha_pinkyin_top, alpha_ring_top]
+          shift: [, 0]
+        radius: 1.2
+        mirror: true
+      - type: circle
+        anchor: 
+          ref: [alpha_pinkyin_home, pinky_pinkyout_pinkyhome]
+          shift: [, -3]
+        radius: 1.2
+        mirror: true
+      - type: circle
+        anchor: 
+          ref: alpha_pinkyin_bottom
+          shift: [10, 8]
+        radius: 1.2
+        mirror: true
+      - type: circle
+        anchor: 
+          ref: [alpha_middle_bottom, alpha_index_bottom]
+          shift: [, -5]
+        radius: 1.2
+        mirror: true
+      - type: circle
+        anchor: 
+          ref: [alpha_middle_top, alpha_index_top]
+          shift: [, 10]
+        radius: 1.2
+        mirror: true
+      - type: circle
+        anchor: 
+          ref: [thumb_far_only, thumb_near_only]
+          shift: [, 0]
+        radius: 1.2
+        mirror: true
+      - type: circle
+        anchor: 
+          ref: alpha_inner_home
+          shift: [10,9]
+        radius: 1.2
+        mirror: true
+      - type: circle
+        anchor: 
+          ref: [alpha_ring_top, mirror_alpha_ring_top]
+          shift: [-14, -2]
+        radius: 1.2
+      - type: circle
+        anchor: 
+          ref: [alpha_ring_top, mirror_alpha_ring_top]
+          shift: [14, -2]
+        radius: 1.2
+      - type: circle
+        anchor: 
+          ref: [alpha_ring_top, mirror_alpha_ring_top]
+          shift: [, -100]
+        radius: 1.2
+      - type: circle
+        anchor: 
+          ref: [alpha_ring_top, mirror_alpha_ring_top]
+          shift: [17, -87]
+        radius: 1.2
+      - type: circle
+        anchor: 
+          ref: [alpha_ring_top, mirror_alpha_ring_top]
+          shift: [-17, -87]
+        radius: 1.2
+    casebase:
+      - type: keys
+        side: both
+        size: 25
+        bound: true
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_ring_top
+            shift: [7,7]
+          - ref: mirror_alpha_ring_top
+            shift: [7,7]
+          - ref: mirror_thumb_far_only
+            shift: [12.5,12.5]
+          - ref: thumb_far_only
+            shift: [12.5,12.5]
+    keysub:
+      - type: keys
+        side: both
+        size: 14
+        bound: false
+        operation: stack
+    platesub:
+      - type: rectangle
+        size: [25,35]
+        anchor: 
+          ref: [alpha_inner_home, mirror_alpha_inner_home]
+          shift: [-12.5,-34.5]
+        operation: add
+      - type: rectangle
+        size: [20,37]
+        anchor: 
+          ref: [alpha_ring_home, mirror_alpha_ring_home]
+          shift: [-10,-17.3]
+        operation: add
+      - type: rectangle
+        size: [10,35]
+        anchor: 
+          ref: [alpha_ring_home, mirror_alpha_ring_home]
+          shift: [-5,-40.3]
+        operation: add        
+      - type: polygon
+        operation: add
+        points:
+          - ref: [alpha_inner_top, mirror_alpha_inner_top]
+            shift: [0,2]
+          - ref: [alpha_inner_top, mirror_alpha_inner_top]
+            shift: [12.5,-14.0932]
+          - ref: [alpha_inner_top, mirror_alpha_inner_top]
+            shift: [-12.5,-14.0932]          
+      - type: polygon
+        operation: add
+        points:
+          - ref: [alpha_inner_top, mirror_alpha_inner_top]
+            shift: [0,-3]
+          - ref: [alpha_inner_top, mirror_alpha_inner_top]
+            shift: [10,7.5679]
+          - ref: [alpha_inner_top, mirror_alpha_inner_top]
+            shift: [-10,7.5679]    
+    platebasic: 
+      - type: outline
+        name: casebase
+      - type: outline
+        name: platesub
+        operation: subtract
+    plate:
+      - type: outline
+        name: platebasic
+        fillet: 2
+      - type: outline
+        name: keysub
+        operation: subtract
+        fillet: .5 
+      - -mounting_holes
+      - type: circle
+        radius: 8
+        anchor:
+         ref: [thumb_far_only,mirror_thumb_far_only]
+         shift: [-31,10]
+        operation: stack
+    mcubatcover:
+      - type: rectangle
+        size: [25,35]
+        anchor: 
+          ref: [alpha_inner_home, mirror_alpha_inner_home]
+          shift: [-12.5,-34.5]
+        operation: add
+      - type: rectangle
+        size: [20,35]
+        anchor: 
+          ref: [alpha_ring_home, mirror_alpha_ring_home]
+          shift: [-10,-17.3]
+        operation: add
+      - type: rectangle
+        size: [10,35]
+        anchor: 
+          ref: [alpha_ring_home, mirror_alpha_ring_home]
+          shift: [-5,-40.3]
+        operation: add   
+      - type: polygon
+        operation: add
+        points:
+          - ref: [alpha_inner_top, mirror_alpha_inner_top]
+            shift: [0,2]
+          - ref: [alpha_inner_top, mirror_alpha_inner_top]
+            shift: [12.5,-14.0932]
+          - ref: [alpha_inner_top, mirror_alpha_inner_top]
+            shift: [-12.5,-14.0932]          
+      - type: polygon
+        operation: add
+        points:
+          - ref: [alpha_inner_top, mirror_alpha_inner_top]
+            shift: [0,-3]
+          - ref: [alpha_inner_top, mirror_alpha_inner_top]
+            shift: [10,7.5679]
+          - ref: [alpha_inner_top, mirror_alpha_inner_top]
+            shift: [-10,7.5679]  
+      - type: rectangle
+        size: [40,5.5]
+        anchor: 
+          ref: [alpha_inner_home, mirror_alpha_inner_home]
+          shift: [-20,-34.5]
+        operation: add
+      - type: rectangle
+        size: [34,6.7]
+        anchor: 
+          ref: [alpha_ring_home, mirror_alpha_ring_home]
+          shift: [-17,11]
+        operation: add
+    mcubatcoverfinished:
+      - type: outline
+        name: mcubatcover
+        fillet: 2
+      - -mounting_holes
+    hotswapcutout:
+      - type: rectangle
+        anchor: 
+          ref: pinky_pinkyout_pinkyhome
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_pinky_pinkyout_pinkyhome
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_pinkyin_bottom
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_pinkyin_bottom
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_pinkyin_home
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_pinkyin_home
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_pinkyin_top
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_pinkyin_top
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_ring_bottom
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_ring_bottom
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_ring_home
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_ring_home
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_ring_top
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_ring_top
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_middle_bottom
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_middle_bottom
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_middle_home
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_middle_home
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_middle_top
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_middle_top
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_index_bottom
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_index_bottom
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_index_home
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_index_home
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_index_top
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_index_top
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_inner_bottom
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_inner_bottom
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_inner_home
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_inner_home
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: alpha_inner_top
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_alpha_inner_top
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: thumb_near_only
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_thumb_near_only
+          shift: [8.6,.5]
+        size: [16,8]
+      - type: rectangle
+        anchor: 
+          ref: thumb_far_only
+          shift: [-8.6,.5]
+        size: [16,8] 
+      - type: rectangle
+        anchor: 
+          ref: mirror_thumb_far_only
+          shift: [8.6,.5]
+        size: [16,8]
+    bottomplate:
+      - type: outline
+        name: casebase
+        fillet: 2
+      - -mounting_holes
+      - type: circle
+        radius: 8
+        anchor:
+         ref: [thumb_far_only,mirror_thumb_far_only]
+         shift: [-31,10]
+        operation: stack
+      - type: circle
+        radius: 1.5
+        anchor:
+          ref: [alpha_ring_top, mirror_alpha_ring_top]
+          shift: [0,-5]
+        operation: subtract
+    casefoam: 
+      - type: outline
+        name: bottomplate
+      - type: outline
+        name: hotswapcutout
+        fillet: 1
+        operation: subtract
+      - type: rectangle
+        anchor:
+          ref: [alpha_ring_top, mirror_alpha_ring_top]
+          shift: [-9,-31.5]
+        size: [18,31]
+        corner: 1
+        operation: subtract
+    pcb:
+      - type: outline
+        name: casebase
+        fillet: 2
+      - -mounting_holes
+      - type: circle
+        radius: 8
+        anchor:
+         ref: [thumb_far_only,mirror_thumb_far_only]
+         shift: [-31,10]
+        operation: stack
+pcbs:
+  birdiebottomboy:
+    outlines.main.outline: bottomplate
+  birdiemcubatcover:
+    outlines.main.outline: mcubatcoverfinished
+  birdie6:
+    outlines.main.outline: pcb
+    footprints:
+      mcu:
+        type: promicro
+        anchor:
+          ref: [alpha_ring_top, mirror_alpha_ring_top]
+          shift: [0,-16]
+          rotate: 270 
+        params: 
+          orientation: down
+      reset:
+        type: button
+        anchor:
+          ref: [alpha_ring_top, mirror_alpha_ring_top]
+          shift: [0,-5]
+          rotate: 180
+        nets:
+          from: RST
+          to: GND
+        params:
+          side: B
+      padn:
+        type: pad
+        anchor:
+          ref: [alpha_ring_top, mirror_alpha_ring_top]
+          shift: [4,-7]
+        nets:
+          net: GND
+        params:
+          width: 2
+          height: 2
+          front: true
+          back: false
+          text: "-"
+          align: left
+      padp:
+        type: pad
+        anchor:
+          ref: [alpha_ring_top, mirror_alpha_ring_top]
+          shift: [-4,-7]
+        nets:
+          net: RAW
+        params:
+          width: 2
+          height: 2
+          front: true
+          back: false
+          text: "+"
+          align: right
