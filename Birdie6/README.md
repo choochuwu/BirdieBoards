@@ -10,7 +10,9 @@ If you use a Nice!Nano and spring pin headers the mcu portion of assembly does n
 I have designed this board to be used with a sandwich style case. The required files to have this case fabricated are included in this repository.
 
 ![Birdie6](/Images/bare6.jpg)
+
 ![Birdie6](/Images/birdie6pcb.jpeg)
 
 This board was designed using Ergogen which can be found [here](https://ergogen.xyz)
+
 This keyboard wouldn’t be possible without the Absolem Club Discord server and it’s members. You can find it [here](https://discord.gg/EEDZyyrxMy)
