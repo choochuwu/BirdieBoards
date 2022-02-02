@@ -1,7 +1,7 @@
 # Birdie6
 ![Birdie6](/Images/butter6.jpeg)
 
-Inspired by the Absolem, Kyria, A.Dux and many other brilliant keyboards that I have seen over the years.
+Inspired by the Absolem, Kyria, A.Dux Balbuzard and many other brilliant keyboards that I have seen over the years.
 
 This is a 36 key, MX only, hotswap only “Unsplit” or unibody keyboard designed to be used with ProMicro compatible dev boards. The halves are each rotated 40° which is somewhat intense compared to most other available unibody designs.
 
