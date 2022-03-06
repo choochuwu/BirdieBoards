@@ -1,0 +1,477 @@
+units:
+  U: 19.05
+points:
+  zones:
+    alpha:
+      columns:
+        pinky:
+          spread: U
+          rows:
+            bottom:
+            home:
+            top:
+        ring:
+          stagger: 12
+          rotate: -6
+          spread: U+.9
+          rows:
+            bottom:
+            home:
+            top:
+        middle:
+          stagger: 4.7
+          rotate: -6
+          spread: U+.9
+          rows:
+            bottom:
+            home:
+            top:
+        index:
+          stagger: -6
+          spread: U
+          rows:
+            bottom:
+            home:
+            top:
+        inner:
+          stagger: -2.5
+          spread: U
+          rows:
+            bottom:
+            home:
+            top:
+      rows: 
+        bottom:
+          padding: U
+        home:
+          padding: U    
+        top:
+    thumb:
+      anchor:
+        ref: alpha_inner_bottom
+        shift: [-11.6, -U+2]
+      columns:
+        near:
+          rotate: -15
+          origin: [-.5U,-.5U]
+          rows:
+            only:
+        far:
+          rotate: -15
+          origin: [-.5U,-.5U]
+          rows:
+            only:
+      rows:
+        only:
+  rotate: 12
+outlines:
+  exports:
+    _batterylocation:
+      - type: rectangle
+        operation: stack
+        size: [13,50]
+        anchor:
+          ref: alpha_inner_home
+          shift: [10,-34]
+    _pcb1:
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_inner_top
+            shift: [7,7]
+          - ref: alpha_inner_bottom
+            shift: [7,-7]
+          - ref: thumb_far_only
+            shift: [-7,7]
+          - ref: thumb_far_only
+            shift: [7,7]
+          - ref: thumb_far_only
+            shift: [7,-7]
+          - ref: thumb_far_only
+            shift: [-7,-7]
+          - ref: thumb_near_only
+            shift: [7,-7]
+          - ref: thumb_near_only
+            shift: [-7,-7]
+          - ref: alpha_pinky_bottom
+            shift: [7,-7]
+          - ref: alpha_pinky_bottom
+            shift: [-7,-7]
+          - ref: alpha_pinky_top
+            shift: [-7,7]
+          - ref: alpha_pinky_top
+            shift: [17,7]
+          - ref: alpha_ring_top
+            shift: [-7,7]
+          - ref: alpha_ring_top
+            shift: [18,7]
+          - ref: alpha_middle_top
+            shift: [-7,7]
+          - ref: alpha_middle_top
+            shift: [7,7]
+          - ref: alpha_index_top
+            shift: [-13,7]
+          - ref: alpha_index_top
+            shift: [7,7]
+          - ref: alpha_inner_top
+            shift: [-13,7]
+      - type: keys
+        size: 14
+        side: left
+        operation: add
+    _o1:
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_inner_top
+            shift: [22,20.5]
+          - ref: thumb_far_only
+            shift: [20.5,20.5]            
+          - ref: thumb_far_only
+            shift: [20.5,-20.5]
+          - ref: thumb_far_only
+            shift: [-.5U,-21]
+          - ref: thumb_near_only
+            shift: [-.5U,-20.5]
+          - ref: alpha_pinky_bottom
+            shift: [.5U,-20.5]            
+          - ref: alpha_pinky_bottom
+            shift: [-20.5,-20.5]
+          - ref: alpha_pinky_top
+            shift: [-20.5,20.5]
+          - ref: alpha_ring_top
+            shift: [-20.5,20.5]
+          - ref: alpha_middle_top
+            shift: [-20.5,20.5]
+          - ref: alpha_middle_top
+            shift: [20.5,20.5]
+    _i1:
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_inner_top
+            shift: [.5U+1,.5U+1]
+          - ref: alpha_inner_bottom
+            shift: [.5U+1,-.5U-6.5]
+          - ref: thumb_far_only
+            shift: [.5U+1,.5U+1]
+          - ref: thumb_far_only
+            shift: [.5U+1,-.5U-1]
+          - ref: thumb_far_only
+            shift: [-.5U,-.5U-1]
+          - ref: thumb_near_only
+            shift: [-.5U-1,-.5U-1]
+          - ref: alpha_pinky_bottom
+            shift: [.5U,-.5U-1]
+          - ref: alpha_pinky_bottom
+            shift: [-.5U+1,-.5U-1]
+          - ref: alpha_pinky_bottom
+            shift: [-.5U-1,-.5U-1]
+          - ref: alpha_pinky_top
+            shift: [-.5U-1,.5U+1]
+          - ref: alpha_pinky_top
+            shift: [.5U+3.5,.5U+1]
+          - ref: alpha_ring_top
+            shift: [-.5U-1,.5U+1]
+          - ref: alpha_ring_top
+            shift: [.5U+4.4,.5U+1]
+          - ref: alpha_middle_top
+            shift: [-.5U-1,.5U+1]
+          - ref: alpha_middle_top
+            shift: [.5U+1,.5U+1]
+          - ref: alpha_index_top
+            shift: [-.5U+1,.5U+1]
+          - ref: alpha_index_top
+            shift: [.5U+1,.5U+1]
+          - ref: alpha_inner_top
+            shift: [-.5U+1,.5U+1]
+      - type: outline
+        name: _batterylocation
+    _t1:
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_inner_top
+            shift: [.5U+1,.5U+1]
+          - ref: alpha_inner_bottom
+            shift: [.5U+1,-.5U-6.5]
+          - ref: thumb_far_only
+            shift: [.5U+1,.5U+1]
+          - ref: thumb_far_only
+            shift: [.5U+1,-.5U-1]
+          - ref: thumb_far_only
+            shift: [-.5U,-.5U-1]
+          - ref: thumb_near_only
+            shift: [-.5U-1,-.5U-1]
+          - ref: thumb_near_only
+            shift: [-.5U-1,.5U]
+          - ref: alpha_index_bottom
+            shift: [-.5U-1,-.5U-1]
+          - ref: alpha_middle_bottom
+            shift: [.5U-1,-.5U-1]
+          - ref: alpha_middle_bottom
+            shift: [-.5U+1,-.5U-1]
+          - ref: alpha_ring_bottom
+            shift: [.5U+1,-.5U-1]
+          - ref: alpha_ring_bottom
+            shift: [-.5U+1,-.5U-1]
+          - ref: alpha_pinky_bottom
+            shift: [.5U+1,-.5U-1]
+          - ref: alpha_pinky_bottom
+            shift: [-.5U+1,-.5U-1]
+          - ref: alpha_pinky_bottom
+            shift: [-.5U-1,-.5U-1]
+          - ref: alpha_pinky_top
+            shift: [-.5U-1,.5U+1]
+          - ref: alpha_pinky_top
+            shift: [.5U+3.5,.5U+1]
+          - ref: alpha_ring_top
+            shift: [-.5U-1,.5U+1]
+          - ref: alpha_ring_top
+            shift: [.5U+4.4,.5U+1]
+          - ref: alpha_middle_top
+            shift: [-.5U-1,.5U+1]
+          - ref: alpha_middle_top
+            shift: [.5U+1,.5U+1]
+          - ref: alpha_index_top
+            shift: [-.5U+1,.5U+1]
+          - ref: alpha_index_top
+            shift: [.5U+1,.5U+1]
+          - ref: alpha_inner_top
+            shift: [-.5U+1,.5U+1]  
+    _pl1:
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_inner_top
+            shift: [.5U,.5U]
+          - ref: alpha_inner_bottom
+            shift: [.5U,-.5U-7]
+          - ref: thumb_far_only
+            shift: [.5U,.5U]
+          - ref: thumb_far_only
+            shift: [.5U,-.5U]
+          - ref: thumb_far_only
+            shift: [-.5U,-.5U]
+          - ref: thumb_near_only
+            shift: [-.5U-1,-.5U]
+          - ref: alpha_pinky_bottom
+            shift: [.5U,-.5U]
+          - ref: alpha_pinky_bottom
+            shift: [-.5U,-.5U]
+          - ref: alpha_pinky_bottom
+            shift: [-.5U,-.5U]
+          - ref: alpha_pinky_top
+            shift: [-.5U,.5U]
+          - ref: alpha_pinky_top
+            shift: [.5U+5,.5U]
+          - ref: alpha_ring_top
+            shift: [-.5U,.5U]
+          - ref: alpha_ring_top
+            shift: [.5U+6,.5U]
+          - ref: alpha_middle_top
+            shift: [-.5U,.5U]
+          - ref: alpha_middle_top
+            shift: [.5U,.5U]
+          - ref: alpha_index_top
+            shift: [-.5U,.5U]
+          - ref: alpha_index_top
+            shift: [.5U+2,.5U]
+          - ref: alpha_inner_top
+            shift: [-.5U,.5U] 
+      - type: keys
+        side: left
+        size: U
+        operation: add
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_pinky_bottom
+            shift: [-.5U,-.5U]
+          - ref: alpha_pinky_bottom
+            shift: [-.5U+3,-.5U-6]
+          - ref: alpha_pinky_bottom
+            shift: [.5U-3,-.5U-6]
+          - ref: alpha_pinky_bottom
+            shift: [.5U,-.5U]
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_pinky_top
+            shift: [-.5U,.5U]
+          - ref: alpha_pinky_top
+            shift: [-.5U+3,.5U+6]
+          - ref: alpha_pinky_top
+            shift: [.5U-3,.5U+6]
+          - ref: alpha_pinky_top
+            shift: [.5U,.5U]
+      - type: polygon 
+        operation: add
+        points:
+          - ref: thumb_near_only
+            shift: [-.5U,-.5U]
+          - ref: thumb_near_only
+            shift: [-.5U+3,-.5U-6]
+          - ref: thumb_near_only
+            shift: [.5U,-.5U-6]
+          - ref: thumb_near_only
+            shift: [.5U,-.5U]
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_inner_top
+            shift: [-.5U,.5U]
+          - ref: alpha_inner_top
+            shift: [-.5U+3,.5U+6]
+          - ref: alpha_inner_top
+            shift: [.5U-3,.5U+6]
+          - ref: alpha_inner_top
+            shift: [.5U,.5U]
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_middle_top
+            shift: [-.5U,.5U]
+          - ref: alpha_middle_top
+            shift: [-.5U+3,.5U+6]
+          - ref: alpha_middle_top
+            shift: [.5U-3,.5U+6]
+          - ref: alpha_middle_top
+            shift: [.5U,.5U]
+      - type: keys
+        side: left
+        size: 14
+        operation: subtract
+      - type: polygon 
+        operation: add
+        points:
+          - ref: thumb_far_only
+            shift: [-.5U,-.5U]
+          - ref: thumb_far_only
+            shift: [-.5U,-.5U-6]
+          - ref: thumb_far_only
+            shift: [.5U-3,-.5U-6]
+          - ref: thumb_far_only
+            shift: [.5U,-.5U]
+    _isp1:
+      - _i1
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_pinky_bottom
+            shift: [-.5U-1,-.5U]
+          - ref: alpha_pinky_bottom
+            shift: [-.5U+2.5,-.5U-7]
+          - ref: alpha_pinky_bottom
+            shift: [.5U-2.5,-.5U-7]
+          - ref: alpha_pinky_bottom
+            shift: [.5U+1,-.5U]
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_pinky_top
+            shift: [-.5U-1.,.5U]
+          - ref: alpha_pinky_top
+            shift: [-.5U+2.5,.5U+7]
+          - ref: alpha_pinky_top
+            shift: [.5U-2.5,.5U+7]
+          - ref: alpha_pinky_top
+            shift: [.5U+1,.5U]
+      - type: polygon 
+        operation: add
+        points:
+          - ref: thumb_near_only
+            shift: [-.5U-1,-.5U]
+          - ref: thumb_near_only
+            shift: [-.5U+2.5,-.5U-7]
+          - ref: thumb_near_only
+            shift: [.5U+2.5,-.5U-7]
+          - ref: thumb_near_only
+            shift: [.5U+1,-.5U]
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_inner_top
+            shift: [-.5U-1,.5U]
+          - ref: alpha_inner_top
+            shift: [-.5U+2.5,.5U+7]
+          - ref: alpha_inner_top
+            shift: [.5U-2.5,.5U+7]
+          - ref: alpha_inner_top
+            shift: [.5U+1,.5U]
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_middle_top
+            shift: [-.5U-1,.5U]
+          - ref: alpha_middle_top
+            shift: [-.5U+2.5,.5U+7]
+          - ref: alpha_middle_top
+            shift: [.5U-2.5,.5U+7]
+          - ref: alpha_middle_top
+            shift: [.5U+1,.5U]
+      - type: polygon 
+        operation: add
+        points:
+          - ref: thumb_far_only
+            shift: [-.5U-1,-.5U]
+          - ref: thumb_far_only
+            shift: [-.5U-2.5,-.5U-7]
+          - ref: thumb_far_only
+            shift: [.5U-2.5,-.5U-7]
+          - ref: thumb_far_only
+            shift: [.5U+1,-.5U]
+      - type: outline
+        name: _batterylocation
+    _pl2:
+      - type: outline
+        name: _pl1
+        fillet: .5
+    pcb2:
+      - type: outline
+        name: _pcb1
+        fillet: 1
+    _o2:
+      - type: outline
+        name: _o1
+        fillet: 5 
+    _i2: 
+      - type: outline
+        name: _i1
+        fillet: 1
+    _t2: 
+      - type: outline
+        name: _o2
+      - type: outline
+        name: _t1
+        fillet: 1  
+        operation: subtract
+    _isp2:
+      - type: outline
+        name: _isp1
+        fillet: 1
+    bottom:
+      - _o2
+    wwoco:
+      - _o2
+      - -_i2
+    wwco:
+      - _o2
+      - -_isp2
+    plate: 
+      - _pl2
+    top: 
+      - _t2
+    reference1:
+      - +_o2
+      - ^_i2
+      - ^pcb2
+      - type: keys
+        side: left
+        bound: false
+        size: 19
+        operation: stack
+      - ^_batterylocation
+pcbs:
+  birddemo:
+    outlines.main.outline: pcb2
