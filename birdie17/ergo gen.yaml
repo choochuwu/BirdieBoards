@@ -472,6 +472,10 @@ outlines:
         size: 19
         operation: stack
       - ^_batterylocation
+    reference2:
+      - _o2
+      - ^_pl2
+      - ^_isp1
 pcbs:
   birddemo:
     outlines.main.outline: pcb2
