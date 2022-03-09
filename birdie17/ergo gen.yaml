@@ -73,6 +73,19 @@ outlines:
         anchor:
           ref: alpha_inner_home
           shift: [10,-34]
+    _mcuref:
+      - type: rectangle
+        anchor: 
+          ref: [alpha_pinky_bottom, thumb_near_only]
+          rotate: -5
+        size: [10,10]
+    _usb:
+      - type: rectangle
+        anchor: 
+          ref: [alpha_pinky_bottom, thumb_near_only]
+          rotate: -4
+          shift: [-6,-19]
+        size: [15,21]
     _pcb1:
       - type: polygon 
         operation: add
@@ -124,67 +137,65 @@ outlines:
         operation: add
         points:
           - ref: alpha_inner_top
-            shift: [22,20.5]
+            shift: [22,22]
           - ref: thumb_far_only
-            shift: [20.5,20.5]            
+            shift: [22,20.5]            
           - ref: thumb_far_only
-            shift: [20.5,-20.5]
+            shift: [22,-20.5]
           - ref: thumb_far_only
             shift: [-.5U,-21]
           - ref: thumb_near_only
             shift: [-.5U,-20.5]
           - ref: alpha_pinky_bottom
-            shift: [.5U,-20.5]            
+            shift: [.5U,-22]            
           - ref: alpha_pinky_bottom
-            shift: [-20.5,-20.5]
+            shift: [-20.5,-22]
           - ref: alpha_pinky_top
             shift: [-20.5,20.5]
-          - ref: alpha_ring_top
-            shift: [-20.5,20.5]
+#          - ref: alpha_ring_top
+#            shift: [-20.5,20.5]
           - ref: alpha_middle_top
-            shift: [-20.5,20.5]
+            shift: [-20.5,22]
           - ref: alpha_middle_top
-            shift: [20.5,20.5]
+            shift: [20.5,22]
     _i1:
       - type: polygon 
         operation: add
         points:
           - ref: alpha_inner_top
-            shift: [.5U+1,.5U+1]
+            shift: [.5U+2,.5U+2]
           - ref: alpha_inner_bottom
-            shift: [.5U+1,-.5U-6.5]
+            shift: [.5U+2,-.5U-6.5]
           - ref: thumb_far_only
-            shift: [.5U+1,.5U+1]
+            shift: [.5U+2,.5U+2]
           - ref: thumb_far_only
-            shift: [.5U+1,-.5U-1]
+            shift: [.5U+2,-.5U-2]
           - ref: thumb_far_only
-            shift: [-.5U,-.5U-1]
+            shift: [-.5U,-.5U-2]
           - ref: thumb_near_only
-            shift: [-.5U-1,-.5U-1]
+            shift: [-.5U-2,-.5U-2]
           - ref: alpha_pinky_bottom
-            shift: [.5U,-.5U-1]
+            shift: [.5U,-.5U-2]
           - ref: alpha_pinky_bottom
-            shift: [-.5U+1,-.5U-1]
-          - ref: alpha_pinky_bottom
-            shift: [-.5U-1,-.5U-1]
+            shift: [-.5U-2,-.5U-2]
           - ref: alpha_pinky_top
-            shift: [-.5U-1,.5U+1]
+            shift: [-.5U-2,.5U+2]
           - ref: alpha_pinky_top
-            shift: [.5U+3.5,.5U+1]
+            shift: [.5U+3,.5U+2]
           - ref: alpha_ring_top
-            shift: [-.5U-1,.5U+1]
+            shift: [-.5U-2,.5U+2]
           - ref: alpha_ring_top
-            shift: [.5U+4.4,.5U+1]
+            shift: [.5U+3.8,.5U+2]
           - ref: alpha_middle_top
-            shift: [-.5U-1,.5U+1]
+            shift: [-.5U-2,.5U+2]
           - ref: alpha_middle_top
-            shift: [.5U+1,.5U+1]
+            shift: [.5U+2,.5U+2]
           - ref: alpha_index_top
-            shift: [-.5U+1,.5U+1]
+            shift: [-.5U+2,.5U+2]
           - ref: alpha_index_top
-            shift: [.5U+1,.5U+1]
+            shift: [.5U+2,.5U+2]
           - ref: alpha_inner_top
-            shift: [-.5U+1,.5U+1]
+            shift: [-.5U+2,.5U+2]
       - type: outline
         name: _batterylocation
     _t1:
@@ -308,119 +319,97 @@ outlines:
       - type: polygon 
         operation: add
         points:
-          - ref: thumb_near_only
-            shift: [-.5U,-.5U]
-          - ref: thumb_near_only
-            shift: [-.5U+3,-.5U-6]
-          - ref: thumb_near_only
-            shift: [.5U,-.5U-6]
-          - ref: thumb_near_only
+          - ref: alpha_inner_top
+            shift: [-.5U,.5U]
+          - ref: alpha_inner_top
+            shift: [-.5U+3,.5U+6]
+          - ref: alpha_inner_top
+            shift: [.5U-3,.5U+6]
+          - ref: alpha_inner_top
+            shift: [.5U,.5U]
+      - type: polygon 
+        operation: add
+        points:
+          - ref: alpha_middle_top
+            shift: [-.5U,.5U]
+          - ref: alpha_middle_top
+            shift: [-.5U+3,.5U+6]
+          - ref: alpha_middle_top
+            shift: [.5U-3,.5U+6]
+          - ref: alpha_middle_top
+            shift: [.5U,.5U]
+      - type: polygon 
+        operation: add
+        points:
+          - ref: thumb_far_only
+            shift: [.5U,.5U]
+          - ref: thumb_far_only
+            shift: [.5U+6,.5U-3]
+          - ref: thumb_far_only
+            shift: [.5U+6,-.5U+3]
+          - ref: thumb_far_only
             shift: [.5U,-.5U]
-      - type: polygon 
-        operation: add
-        points:
-          - ref: alpha_inner_top
-            shift: [-.5U,.5U]
-          - ref: alpha_inner_top
-            shift: [-.5U+3,.5U+6]
-          - ref: alpha_inner_top
-            shift: [.5U-3,.5U+6]
-          - ref: alpha_inner_top
-            shift: [.5U,.5U]
-      - type: polygon 
-        operation: add
-        points:
-          - ref: alpha_middle_top
-            shift: [-.5U,.5U]
-          - ref: alpha_middle_top
-            shift: [-.5U+3,.5U+6]
-          - ref: alpha_middle_top
-            shift: [.5U-3,.5U+6]
-          - ref: alpha_middle_top
-            shift: [.5U,.5U]
       - type: keys
         side: left
         size: 14
         operation: subtract
-      - type: polygon 
-        operation: add
-        points:
-          - ref: thumb_far_only
-            shift: [-.5U,-.5U]
-          - ref: thumb_far_only
-            shift: [-.5U,-.5U-6]
-          - ref: thumb_far_only
-            shift: [.5U-3,-.5U-6]
-          - ref: thumb_far_only
-            shift: [.5U,-.5U]
     _isp1:
       - _i1
       - type: polygon 
         operation: add
         points:
           - ref: alpha_pinky_bottom
-            shift: [-.5U-1,-.5U]
+            shift: [-.5U-2,-.5U-2]
           - ref: alpha_pinky_bottom
-            shift: [-.5U+2.5,-.5U-7]
+            shift: [-.5U+1.5,-.5U-8]
           - ref: alpha_pinky_bottom
-            shift: [.5U-2.5,-.5U-7]
+            shift: [.5U-1.5,-.5U-8]
           - ref: alpha_pinky_bottom
-            shift: [.5U+1,-.5U]
+            shift: [.5U+2,-.5U-2]
       - type: polygon 
         operation: add
         points:
           - ref: alpha_pinky_top
-            shift: [-.5U-1.,.5U]
+            shift: [-.5U-2.,.5U+2]
           - ref: alpha_pinky_top
-            shift: [-.5U+2.5,.5U+7]
+            shift: [-.5U+1.5,.5U+8]
           - ref: alpha_pinky_top
-            shift: [.5U-2.5,.5U+7]
+            shift: [.5U-1.5,.5U+8]
           - ref: alpha_pinky_top
-            shift: [.5U+1,.5U]
-      - type: polygon 
-        operation: add
-        points:
-          - ref: thumb_near_only
-            shift: [-.5U-1,-.5U]
-          - ref: thumb_near_only
-            shift: [-.5U+2.5,-.5U-7]
-          - ref: thumb_near_only
-            shift: [.5U+2.5,-.5U-7]
-          - ref: thumb_near_only
-            shift: [.5U+1,-.5U]
+            shift: [.5U+2,.5U+2]
       - type: polygon 
         operation: add
         points:
           - ref: alpha_inner_top
-            shift: [-.5U-1,.5U]
+            shift: [-.5U-2,.5U+2]
           - ref: alpha_inner_top
-            shift: [-.5U+2.5,.5U+7]
+            shift: [-.5U+1.5,.5U+8]
           - ref: alpha_inner_top
-            shift: [.5U-2.5,.5U+7]
+            shift: [.5U-1.5,.5U+8]
           - ref: alpha_inner_top
-            shift: [.5U+1,.5U]
+            shift: [.5U+2,.5U+2]
       - type: polygon 
         operation: add
         points:
           - ref: alpha_middle_top
-            shift: [-.5U-1,.5U]
+            shift: [-.5U-2,.5U+2]
           - ref: alpha_middle_top
-            shift: [-.5U+2.5,.5U+7]
+            shift: [-.5U+1.5,.5U+8]
           - ref: alpha_middle_top
-            shift: [.5U-2.5,.5U+7]
+            shift: [.5U-1.5,.5U+8]
           - ref: alpha_middle_top
-            shift: [.5U+1,.5U]
+            shift: [.5U+2,.5U+2]
       - type: polygon 
         operation: add
         points:
           - ref: thumb_far_only
-            shift: [-.5U-1,-.5U]
+            shift: [.5U+2,.5U+2]
           - ref: thumb_far_only
-            shift: [-.5U-2.5,-.5U-7]
+            shift: [.5U+8,.5U-2]
           - ref: thumb_far_only
-            shift: [.5U-2.5,-.5U-7]
+            shift: [.5U+8,-.5U+2]
           - ref: thumb_far_only
-            shift: [.5U+1,-.5U]
+            shift: [.5U+2,-.5U-2]
       - type: outline
         name: _batterylocation
     _pl2:
@@ -431,17 +420,14 @@ outlines:
       - type: outline
         name: _pcb1
         fillet: 1
-    _o2:
-      - type: outline
-        name: _o1
-        fillet: 5 
     _i2: 
       - type: outline
         name: _i1
         fillet: 1
     _t2: 
       - type: outline
-        name: _o2
+        name: _o1
+        fillet: 2
       - type: outline
         name: _t1
         fillet: 1  
@@ -450,32 +436,29 @@ outlines:
       - type: outline
         name: _isp1
         fillet: 1
+    _wwco1:
+      - _o1
+      - -_isp1
+      - -_usb
+    _wwoco1:
+      - _o1
+      - -_i1
     bottom:
-      - _o2
-    wwoco:
-      - _o2
-      - -_i2
-    wwco:
-      - _o2
-      - -_isp2
+      - type: outline
+        name: _o1
+        fillet: 2
+    wwoco2: 
+      - type: outline
+        name: _wwoco1
+        fillet: 2
+    wwco2:
+      - type: outline
+        name: _wwco1
+        fillet: 2
     plate: 
       - _pl2
     top: 
       - _t2
-    reference1:
-      - +_o2
-      - ^_i2
-      - ^pcb2
-      - type: keys
-        side: left
-        bound: false
-        size: 19
-        operation: stack
-      - ^_batterylocation
-    reference2:
-      - _o2
-      - ^_pl2
-      - ^_isp1
-pcbs:
-  birddemo:
-    outlines.main.outline: pcb2
+    ref: 
+      - plate
+      - _wwco1
