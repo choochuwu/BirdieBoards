@@ -66,6 +66,90 @@ points:
   rotate: 12
 outlines:
   exports:
+    _mount1:
+      - type: circle
+        radius: 2.561
+        anchor:
+          ref: alpha_pinky_bottom
+          shift: [-15,-16]
+      - type: circle
+        radius: 2.561
+        anchor:
+          ref: alpha_pinky_top
+          shift: [-15,16]
+      - type: circle
+        radius: 2.561
+        anchor:
+          ref: alpha_inner_top
+          shift: [15,16]
+      - type: circle
+        radius: 2.561
+        anchor:
+          ref: thumb_far_only
+          shift: [16,-15]
+    _mount2:
+      - type: circle
+        radius: 2.35
+        anchor:
+          ref: alpha_pinky_bottom
+          shift: [-15,-16]
+      - type: circle
+        radius: 2.35
+        anchor:
+          ref: alpha_pinky_top
+          shift: [-15,16]
+      - type: circle
+        radius: 2.35
+        anchor:
+          ref: alpha_inner_top
+          shift: [15,16]
+      - type: circle
+        radius: 2.35
+        anchor:
+          ref: thumb_far_only
+          shift: [16,-15]
+    _mount3:
+      - type: circle
+        radius: 1.7
+        anchor:
+          ref: alpha_pinky_bottom
+          shift: [-15,-16]
+      - type: circle
+        radius: 1.7
+        anchor:
+          ref: alpha_pinky_top
+          shift: [-15,16]
+      - type: circle
+        radius: 1.7
+        anchor:
+          ref: alpha_inner_top
+          shift: [15,16]
+      - type: circle
+        radius: 1.7
+        anchor:
+          ref: thumb_far_only
+          shift: [16,-15]
+    _mount4:
+      - type: circle
+        radius: 3
+        anchor:
+          ref: alpha_pinky_bottom
+          shift: [-15,-16]
+      - type: circle
+        radius: 3
+        anchor:
+          ref: alpha_pinky_top
+          shift: [-15,16]
+      - type: circle
+        radius: 3
+        anchor:
+          ref: alpha_inner_top
+          shift: [15,16]
+      - type: circle
+        radius: 3
+        anchor:
+          ref: thumb_far_only
+          shift: [16,-15]
     _batterylocation:
       - type: rectangle
         operation: stack
@@ -132,6 +216,59 @@ outlines:
         size: 14
         side: left
         operation: add
+    _pcbs1:
+      - type: polygon
+        points:
+          - ref: alpha_ring_top
+            shift: [-5,-8]
+          - ref: alpha_ring_top
+            shift: [7,-8]
+          - ref: alpha_middle_top
+            shift: [-7,-8]
+          - ref: alpha_middle_top
+            shift: [7,-8]
+          - ref: alpha_index_top
+            shift: [-7,-8]
+          - ref: alpha_index_top
+            shift: [5,-8]
+          - ref: alpha_index_home
+            shift: [5,8]
+          - ref: alpha_index_home
+            shift: [-7,8]
+          - ref: alpha_middle_home
+            shift: [7,8]
+          - ref: alpha_middle_home
+            shift: [-7,8]
+          - ref: alpha_ring_home
+            shift: [7,8]
+          - ref: alpha_ring_home
+            shift: [-5,8]
+      - type: polygon
+        points:
+          - ref: alpha_ring_home
+            shift: [-5,-8]
+          - ref: alpha_ring_home
+            shift: [7,-8]
+          - ref: alpha_middle_home
+            shift: [-7,-8]
+          - ref: alpha_middle_home
+            shift: [7,-8]
+          - ref: alpha_index_home 
+            shift: [-7,-8]
+          - ref: alpha_index_home
+            shift: [5,-8]
+          - ref: alpha_index_bottom 
+            shift: [5,8]
+          - ref: alpha_index_bottom 
+            shift: [-7,8]
+          - ref: alpha_middle_bottom 
+            shift: [7,8]
+          - ref: alpha_middle_bottom 
+            shift: [-7,8]
+          - ref: alpha_ring_bottom 
+            shift: [7,8]
+          - ref: alpha_ring_bottom 
+            shift: [-5,8]
     _o1:
       - type: polygon 
         operation: add
@@ -152,8 +289,6 @@ outlines:
             shift: [-20.5,-22]
           - ref: alpha_pinky_top
             shift: [-20.5,20.5]
-#          - ref: alpha_ring_top
-#            shift: [-20.5,20.5]
           - ref: alpha_middle_top
             shift: [-20.5,22]
           - ref: alpha_middle_top
@@ -205,7 +340,15 @@ outlines:
           - ref: alpha_inner_top
             shift: [.5U+1,.5U+1]
           - ref: alpha_inner_bottom
-            shift: [.5U+1,-.5U-6.5]
+            shift: [.5U+1,-.5U-1]
+          - ref: alpha_inner_bottom
+            shift: [-.5U+6,-.5U-1]
+          - ref: thumb_near_only
+            shift: [.5U+1,.5U+1]
+          - ref: thumb_near_only
+            shift: [.5U+1,-2]
+          - ref: thumb_far_only
+            shift: [-.5U-1,.5U+1]
           - ref: thumb_far_only
             shift: [.5U+1,.5U+1]
           - ref: thumb_far_only
@@ -235,9 +378,19 @@ outlines:
           - ref: alpha_pinky_top
             shift: [-.5U-1,.5U+1]
           - ref: alpha_pinky_top
+            shift: [.5U+1,.5U+1]
+          - ref: alpha_pinky_top
+            shift: [.5U+1,-15]
+          - ref: alpha_pinky_top
             shift: [.5U+3.5,.5U+1]
           - ref: alpha_ring_top
             shift: [-.5U-1,.5U+1]
+          - ref: alpha_ring_top
+            shift: [.5U+1,.5U+1]  
+          - ref: alpha_ring_top
+            shift: [.5U+1,-22]
+          - ref: alpha_ring_top
+            shift: [.5U+4.4,.5U+1]            
           - ref: alpha_ring_top
             shift: [.5U+4.4,.5U+1]
           - ref: alpha_middle_top
@@ -416,49 +569,31 @@ outlines:
       - type: outline
         name: _pl1
         fillet: .5
-    pcb2:
+    plate: 
+      - _pl2
+    layer1:
+      - _o1
+      - -_mount4
+    layer2:
+      - _o1
+      - -_i1
+      - -_mount3
+    layer3:
+      - _o1
+      - -_isp1
+      - -_mount3
+    layer4:
+      - _o1
+      - -_isp1
+      - -_mount1
+    layer5:
+      - _o1
+      - -_i1
+      - -_mount2
+    layer6:
+      - _o1
+      - -_t1
+    pcb:
       - type: outline
         name: _pcb1
         fillet: 1
-    _i2: 
-      - type: outline
-        name: _i1
-        fillet: 1
-    _t2: 
-      - type: outline
-        name: _o1
-        fillet: 2
-      - type: outline
-        name: _t1
-        fillet: 1  
-        operation: subtract
-    _isp2:
-      - type: outline
-        name: _isp1
-        fillet: 1
-    _wwco1:
-      - _o1
-      - -_isp1
-      - -_usb
-    _wwoco1:
-      - _o1
-      - -_i1
-    bottom:
-      - type: outline
-        name: _o1
-        fillet: 2
-    wwoco2: 
-      - type: outline
-        name: _wwoco1
-        fillet: 2
-    wwco2:
-      - type: outline
-        name: _wwco1
-        fillet: 2
-    plate: 
-      - _pl2
-    top: 
-      - _t2
-    ref: 
-      - plate
-      - _wwco1
