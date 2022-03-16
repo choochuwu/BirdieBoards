@@ -10,6 +10,7 @@ points:
             bottom:
             home:
             top:
+          key.column_net: P0
         ring:
           stagger: 12
           rotate: -6
@@ -18,6 +19,7 @@ points:
             bottom:
             home:
             top:
+          key.column_net: P0
         middle:
           stagger: 4.7
           rotate: -6
@@ -26,6 +28,7 @@ points:
             bottom:
             home:
             top:
+          key.column_net: P0
         index:
           stagger: -6
           spread: U
@@ -33,6 +36,7 @@ points:
             bottom:
             home:
             top:
+          key.column_net: P0
         inner:
           stagger: -2.5
           spread: U
@@ -40,12 +44,37 @@ points:
             bottom:
             home:
             top:
+          key.column_net: P0
       rows: 
         bottom:
           padding: U
+          row_net: P1
         home:
-          padding: U    
+          padding: U
+          row_net: P1    
         top:
+          row_net: P1
+      key: 
+        tags:
+          keys: true
+        footprints:
+          mx:
+            type: mx
+            nets: 
+              from: =colrow
+              to: =column_net
+            params:
+              reverse: true
+          diode:
+            type: diode
+            nets:
+              from: =colrow
+              to: =row_net
+            anchor:
+              shift: [0,-5]
+              rotate: 180
+            params:
+                through_hole: false 
     thumb:
       anchor:
         ref: alpha_inner_bottom
@@ -56,13 +85,45 @@ points:
           origin: [-.5U,-.5U]
           rows:
             only:
+          key.column_net: P0
         far:
           rotate: -15
           origin: [-.5U,-.5U]
           rows:
             only:
+          key.column_net: P0
       rows:
         only:
+          row_net: P1
+      key: 
+        tags:
+          keys: true
+        footprints:
+          mx:
+            type: mx
+            nets: 
+              from: =colrow
+              to: =column_net
+            params:
+              reverse: true
+          diode:
+            type: diode
+            nets:
+              from: =colrow
+              to: =row_net
+            anchor:
+              shift: [0,-5]
+              rotate: 180
+            params:
+                through_hole: false 
+    xiao:
+      anchor:
+        ref: [alpha_pinky_bottom, thumb_near_only]
+        shift: [3,6]
+        rotate: -5.3
+      columns.xiao:
+      rows.xiao:
+      key.tags.xiao: true
   rotate: 12
 outlines:
   exports:
@@ -157,19 +218,13 @@ outlines:
         anchor:
           ref: alpha_inner_home
           shift: [10,-34]
-    _mcuref:
+    usb:
       - type: rectangle
-        anchor: 
-          ref: [alpha_pinky_bottom, thumb_near_only]
-          rotate: -5
-        size: [10,10]
-    _usb:
-      - type: rectangle
-        anchor: 
-          ref: [alpha_pinky_bottom, thumb_near_only]
-          rotate: -4
-          shift: [-6,-19]
-        size: [15,21]
+        size: [12,25]
+        anchor:
+          ref: xiao_xiao_xiao
+          shift: [-6,-29]
+        operation: stack
     _pcb1:
       - type: polygon 
         operation: add
@@ -190,6 +245,10 @@ outlines:
             shift: [7,-7]
           - ref: thumb_near_only
             shift: [-7,-7]
+          - ref: thumb_near_only
+            shift: [-10,-7]   
+          - ref: alpha_pinky_bottom
+            shift: [10,-7]            
           - ref: alpha_pinky_bottom
             shift: [7,-7]
           - ref: alpha_pinky_bottom
@@ -216,59 +275,7 @@ outlines:
         size: 14
         side: left
         operation: add
-    _pcbs1:
-      - type: polygon
-        points:
-          - ref: alpha_ring_top
-            shift: [-5,-8]
-          - ref: alpha_ring_top
-            shift: [7,-8]
-          - ref: alpha_middle_top
-            shift: [-7,-8]
-          - ref: alpha_middle_top
-            shift: [7,-8]
-          - ref: alpha_index_top
-            shift: [-7,-8]
-          - ref: alpha_index_top
-            shift: [5,-8]
-          - ref: alpha_index_home
-            shift: [5,8]
-          - ref: alpha_index_home
-            shift: [-7,8]
-          - ref: alpha_middle_home
-            shift: [7,8]
-          - ref: alpha_middle_home
-            shift: [-7,8]
-          - ref: alpha_ring_home
-            shift: [7,8]
-          - ref: alpha_ring_home
-            shift: [-5,8]
-      - type: polygon
-        points:
-          - ref: alpha_ring_home
-            shift: [-5,-8]
-          - ref: alpha_ring_home
-            shift: [7,-8]
-          - ref: alpha_middle_home
-            shift: [-7,-8]
-          - ref: alpha_middle_home
-            shift: [7,-8]
-          - ref: alpha_index_home 
-            shift: [-7,-8]
-          - ref: alpha_index_home
-            shift: [5,-8]
-          - ref: alpha_index_bottom 
-            shift: [5,8]
-          - ref: alpha_index_bottom 
-            shift: [-7,8]
-          - ref: alpha_middle_bottom 
-            shift: [7,8]
-          - ref: alpha_middle_bottom 
-            shift: [-7,8]
-          - ref: alpha_ring_bottom 
-            shift: [7,8]
-          - ref: alpha_ring_bottom 
-            shift: [-5,8]
+        tags: [keys]
     _o1:
       - type: polygon 
         operation: add
@@ -447,6 +454,7 @@ outlines:
         side: left
         size: U
         operation: add
+        tags: [keys]
       - type: polygon 
         operation: add
         points:
@@ -506,6 +514,7 @@ outlines:
         side: left
         size: 14
         operation: subtract
+        tags: [keys]
     _isp1:
       - _i1
       - type: polygon 
@@ -571,29 +580,41 @@ outlines:
         fillet: .5
     plate: 
       - _pl2
+      - -usb
+    layer0:
+      - _o1
+      - -_mount4
     layer1:
       - _o1
+      - -_i1
       - -_mount4
     layer2:
       - _o1
       - -_i1
       - -_mount3
+      - -usb
     layer3:
       - _o1
       - -_isp1
       - -_mount3
+      - -usb
     layer4:
       - _o1
       - -_isp1
       - -_mount1
+      - -usb
     layer5:
-      - _o1
-      - -_i1
-      - -_mount2
-    layer6:
       - _o1
       - -_t1
     pcb:
       - type: outline
         name: _pcb1
         fillet: 1
+      - type: keys
+        side: left
+        tags: [xiao]
+        operation: stack
+        size: [17.78,21]
+pcbs:
+  brid17:
+    outlines.man.outline: pcb
